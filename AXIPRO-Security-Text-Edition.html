@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1110">
+<meta name="description" content="AXIPRO Security — понятные материалы о цифровой безопасности, приватности и защите от киберугроз.">
+<title>AXIPRO Security — цифровая безопасность</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1110;--surface:#111a18;--surface2:#16211e;--line:#293a34;--text:#e7eee9;--muted:#a0afa7;--soft:#74857c;--accent:#70d6a5;--accent-ink:#10251b;--warn:#e8bd70;--max:1080px;--sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"SFMono-Regular",Consolas,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.75}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}button{font:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(11,17,16,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.bar{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;color:var(--text);font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.08em}.brand-mark{width:36px;height:36px;border:1px solid var(--accent);border-radius:8px;display:grid;place-items:center;color:var(--accent)}.brand small{display:block;font-size:9px;font-weight:400;color:var(--soft);letter-spacing:.16em}.nav{display:flex;gap:20px;align-items:center}.nav a{font-size:12px;color:var(--muted)}.nav a:hover{color:var(--accent);text-decoration:none}.menu{display:none;border:1px solid var(--line);background:var(--surface);color:var(--text);padding:8px 11px;border-radius:6px;cursor:pointer}
+main{padding-bottom:50px}.intro{padding:76px 0 60px;border-bottom:1px solid var(--line)}.eyebrow{font:11px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}h1,h2,h3{line-height:1.2;letter-spacing:-.035em}h1{font-size:clamp(38px,6vw,66px);max-width:820px;margin:20px 0}.intro .summary{font-size:18px;color:var(--muted);max-width:730px;margin:0}.meta{margin-top:28px;font:11px var(--mono);color:var(--soft)}.meta span{color:var(--accent);margin-right:8px}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:58px;padding-top:48px}.toc{position:sticky;top:104px;align-self:start;border-left:1px solid var(--line);padding-left:17px}.toc strong{display:block;font:10px var(--mono);letter-spacing:.12em;color:var(--soft);margin-bottom:12px}.toc a{display:block;padding:5px 0;color:var(--muted);font-size:12px}.toc a:hover{color:var(--accent);text-decoration:none}.content{min-width:0}.article-section{padding:0 0 40px;margin:0 0 38px;border-bottom:1px solid var(--line);scroll-margin-top:100px}.article-section:last-child{border:0}.article-section h2{font-size:clamp(25px,3vw,34px);margin:0 0 17px}.article-section h3{font-size:18px;margin:27px 0 8px}.article-section p{color:#c0cbc4;margin:0 0 15px}.article-section ul,.article-section ol{padding-left:22px;color:#c0cbc4}.article-section li{padding:4px 0}.note{border-left:2px solid var(--accent);background:var(--surface);padding:15px 18px;margin:22px 0;color:var(--muted);font-size:14px}.note b{color:var(--text)}.term{font-family:var(--mono);color:var(--accent);font-size:.92em}.rule{display:grid;grid-template-columns:42px 1fr;gap:15px;padding:17px 0;border-top:1px solid var(--line)}.rule-number{font:12px var(--mono);color:var(--accent);padding-top:3px}.rule h3{margin:0 0 6px;font-size:16px}.rule p{margin:0;font-size:14px}.threat-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}.threat{padding:15px 16px;background:var(--surface);border:1px solid var(--line);border-radius:8px}.threat h3{font:600 14px var(--mono);color:var(--accent);margin:0 0 6px;letter-spacing:0}.threat p{font-size:13px;margin:0;color:var(--muted)}.footer{border-top:1px solid var(--line);padding:25px 0 35px;color:var(--soft);font:11px var(--mono);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.footer a{color:var(--accent)}.backtop{position:fixed;right:22px;bottom:22px;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:var(--surface2);color:var(--accent);cursor:pointer;opacity:0;pointer-events:none;transition:.2s}.backtop.show{opacity:1;pointer-events:auto}
+@media(max-width:800px){.menu{display:block}.nav{display:none;position:absolute;top:71px;left:0;right:0;padding:15px 22px 20px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:10px}.nav.open{display:flex}.layout{grid-template-columns:1fr;gap:28px}.toc{position:static;display:flex;flex-wrap:wrap;gap:5px 15px;border-left:0;border-bottom:1px solid var(--line);padding:0 0 16px}.toc strong{width:100%;margin-bottom:3px}.toc a{padding:2px 0}.intro{padding:54px 0 42px}}
+@media(max-width:560px){.wrap{width:calc(100% - 28px)}.intro .summary{font-size:16px}.threat-list{grid-template-columns:1fr}.article-section p,.article-section li{font-size:14px}.footer{display:grid;gap:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="AXIPRO Security — на главную"><span class="brand-mark">A/</span><span>AXIPRO<small>SECURITY / KNOWLEDGE</small></span></a>
+    <button class="menu" id="menuButton" aria-expanded="false" aria-controls="mainNav">МЕНЮ</button>
+    <nav class="nav" id="mainNav" aria-label="Основная навигация">
+      <a href="#principles">Основы</a><a href="#threats">Угрозы</a><a href="#privacy">Приватность</a><a href="#plugins">Плагины</a><a href="#response">Если случилось</a><a href="#about">О проекте</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="top">
+  <section class="intro">
+    <div class="eyebrow">Digital security / Knowledge base</div>
+    <h1>Безопасность начинается <span style="color:var(--accent)">с понимания.</span></h1>
+    <p class="summary">AXIPRO Security — текстовый справочник о цифровой безопасности. Здесь собраны понятные объяснения угроз, практические рекомендации по защите аккаунтов, устройств и личных данных.</p>
+    <div class="meta"><span>●</span> EDUCATION &nbsp; / &nbsp; AWARENESS &nbsp; / &nbsp; PROTECTION</div>
+  </section>
+
+  <div class="layout">
+    <aside class="toc" aria-label="Содержание">
+      <strong>СОДЕРЖАНИЕ</strong>
+      <a href="#principles">01 — Основы безопасности</a>
+      <a href="#accounts">02 — Защита аккаунтов</a>
+      <a href="#threats">03 — Виды угроз</a>
+      <a href="#phishing">04 — Фишинг и обман</a>
+      <a href="#privacy">05 — Приватность</a>
+      <a href="#plugins">06 — Безопасность плагинов</a>
+      <a href="#response">07 — Реагирование</a>
+      <a href="#about">08 — Об AXIPRO</a>
+    </aside>
+
+    <article class="content">
+      <section class="article-section" id="principles">
+        <div class="eyebrow">01 / Fundamentals</div>
+        <h2>Что такое цифровая безопасность</h2>
+        <p>Цифровая безопасность — это совокупность привычек, настроек и технических мер, которые помогают защищать устройства, аккаунты, переписку и личную информацию от несанкционированного доступа, повреждения или утечки.</p>
+        <p>Риск редко зависит только от одной программы. На безопасность влияют источник загрузки, настройки устройства, действия пользователя, надёжность паролей, обновления и то, какие разрешения получают приложения.</p>
+        <h3>Три базовых принципа</h3>
+        <div class="rule"><div class="rule-number">01</div><div><h3>Конфиденциальность</h3><p>Информация доступна только тем, кому владелец действительно разрешил её видеть.</p></div></div>
+        <div class="rule"><div class="rule-number">02</div><div><h3>Целостность</h3><p>Данные не должны незаметно изменяться, подменяться или повреждаться.</p></div></div>
+        <div class="rule"><div class="rule-number">03</div><div><h3>Доступность</h3><p>Владелец должен иметь возможность пользоваться своими данными и сервисами, когда они ему необходимы.</p></div></div>
+        <div class="note"><b>Главная мысль:</b> безопасность — это не одна кнопка и не одна программа. Это последовательная система разумных решений.</div>
+      </section>
+
+      <section class="article-section" id="accounts">
+        <div class="eyebrow">02 / Account protection</div>
+        <h2>Как защитить свои аккаунты</h2>
+        <p>Аккаунты электронной почты, социальных сетей, мессенджеров и игровых платформ часто связаны между собой. Потеря доступа к одному из них может привести к компрометации остальных.</p>
+        <h3>Пароли</h3>
+        <ul><li>Используй уникальный пароль для каждого важного сервиса.</li><li>Предпочитай длинные парольные фразы, которые сложно угадать.</li><li>Храни пароли в надёжном менеджере, а не в открытых заметках.</li><li>Не отправляй пароли и коды подтверждения другим людям.</li></ul>
+        <h3>Многофакторная аутентификация</h3>
+        <p>Включи MFA там, где это возможно. Дополнительный фактор усложняет вход злоумышленнику даже в случае утечки пароля. Для важных аккаунтов предпочтительны аппаратные ключи безопасности или passkeys, если сервис их поддерживает.</p>
+        <h3>Проверка активных сессий</h3>
+        <p>Периодически просматривай список устройств и активных сеансов. Завершай неизвестные сессии, проверяй способы восстановления доступа и актуальность резервной почты или номера телефона.</p>
+      </section>
+
+      <section class="article-section" id="threats">
+        <div class="eyebrow">03 / Threat landscape</div>
+        <h2>Распространённые виды вредоносных программ</h2>
+        <p>Вредоносное ПО (malware) — программное обеспечение, созданное для действий без согласия владельца устройства: кражи информации, скрытого наблюдения, нарушения работы системы или получения несанкционированного доступа.</p>
+        <div class="threat-list">
+          <div class="threat"><h3>Trojan</h3><p>Троян маскируется под полезную или легитимную программу.</p></div>
+          <div class="threat"><h3>Stealer</h3><p>Предназначен для кражи паролей, токенов, файлов и других данных.</p></div>
+          <div class="threat"><h3>Spyware</h3><p>Скрытно собирает информацию об активности пользователя.</p></div>
+          <div class="threat"><h3>Keylogger</h3><p>Записывает нажатия клавиш и может перехватывать вводимые данные.</p></div>
+          <div class="threat"><h3>RAT</h3><p>Вредоносный инструмент удалённого доступа и управления устройством.</p></div>
+          <div class="threat"><h3>Ransomware</h3><p>Блокирует или шифрует данные и требует плату за восстановление.</p></div>
+          <div class="threat"><h3>Wiper</h3><p>Предназначен для уничтожения или повреждения данных.</p></div>
+          <div class="threat"><h3>Rootkit</h3><p>Помогает скрывать вредоносные компоненты и их активность.</p></div>
+          <div class="threat"><h3>Worm</h3><p>Может самостоятельно распространяться между системами.</p></div>
+          <div class="threat"><h3>Cryptominer</h3><p>Использует вычислительные ресурсы устройства для майнинга без разрешения.</p></div>
+          <div class="threat"><h3>Adware</h3><p>Показывает навязчивую рекламу; некоторые варианты отслеживают активность.</p></div>
+          <div class="threat"><h3>Browser hijacker</h3><p>Меняет настройки браузера или перенаправляет поисковые запросы.</p></div>
+        </div>
+        <p>Отдельно существуют методы и техники атак, которые не являются семействами вредоносного ПО. Например, <span class="term">exploit</span> — способ использования уязвимости, <span class="term">RCE</span> — удалённое выполнение кода, а <span class="term">data exfiltration</span> — несанкционированный вывод данных.</p>
+      </section>
+
+      <section class="article-section" id="phishing">
+        <div class="eyebrow">04 / Social engineering</div>
+        <h2>Фишинг и социальная инженерия</h2>
+        <p>Фишинг — попытка обманом получить конфиденциальную информацию или заставить человека выполнить опасное действие. Сообщение может выглядеть как уведомление от знакомого сервиса, банка, администрации сообщества или коллеги.</p>
+        <h3>На что обратить внимание</h3>
+        <ul><li>Сообщение требует немедленно перейти по ссылке или угрожает блокировкой аккаунта.</li><li>Адрес сайта отличается от официального домена на одну или несколько букв.</li><li>У тебя просят пароль, одноразовый код, резервный ключ или seed-фразу.</li><li>Вложение пришло неожиданно, а отправитель торопит с его открытием.</li><li>Предлагают установить неизвестное приложение или плагин.</li></ul>
+        <p>Если сообщение вызывает сомнения, не используй ссылку из него. Открой официальный сайт или приложение самостоятельно и проверь уведомление там.</p>
+      </section>
+
+      <section class="article-section" id="privacy">
+        <div class="eyebrow">05 / Privacy</div>
+        <h2>Приватность и защита личных данных</h2>
+        <p>Приватность — это контроль над тем, какие сведения о тебе собираются, кому они передаются и как долго хранятся. Даже обычные разрешения приложений могут открывать доступ к контактам, файлам, микрофону, камере или местоположению.</p>
+        <h3>Полезные привычки</h3>
+        <ul><li>Выдавай приложениям только те разрешения, которые необходимы для их функций.</li><li>Удаляй приложения, которыми больше не пользуешься.</li><li>Проверяй настройки видимости профиля и публикаций.</li><li>Не публикуй документы, билеты, адреса и другие чувствительные сведения.</li><li>Используй блокировку экрана и шифрование устройства, если они доступны.</li><li>Перед продажей или передачей устройства корректно удаляй личные данные.</li></ul>
+      </section>
+
+      <section class="article-section" id="plugins">
+        <div class="eyebrow">06 / Plugin security</div>
+        <h2>Безопасность плагинов и модификаций</h2>
+        <p>Плагин может расширять возможности приложения, но вместе с этим получать доступ к данным, функциям или сетевым ресурсам. Поэтому оценивать нужно не только описание и внешний вид, но и происхождение, запрашиваемые разрешения и поведение кода.</p>
+        <h3>Перед установкой</h3>
+        <ol><li>Проверь источник публикации и репутацию разработчика.</li><li>Убедись, что назначение плагина понятно и соответствует его функциям.</li><li>Если исходный код доступен, обрати внимание на неизвестные сетевые адреса, загрузку удалённого кода и динамическое выполнение.</li><li>Проверь файл доступными средствами анализа, учитывая ограничения этих средств.</li><li>Не устанавливай плагин, если остаются существенные сомнения.</li></ol>
+        <h3>Проект ExteraGuard</h3>
+        <p><span class="term">ExteraGuard</span> — проект AXIPRO, ориентированный на статический анализ подозрительных плагинов, проверку целостности файлов и пользовательскую изоляцию обнаруженных объектов. Статический анализ может находить отдельные подозрительные признаки, но не гарантирует обнаружение всех угроз и способен выдавать ложные срабатывания.</p>
+        <div class="note"><b>Важно:</b> не воспринимай отсутствие предупреждений как доказательство безопасности. Проверяй источник и назначение файла, а неизвестный код не запускай.</div>
+      </section>
+
+      <section class="article-section" id="response">
+        <div class="eyebrow">07 / Incident response</div>
+        <h2>Что делать, если возникла проблема</h2>
+        <h3>Если подозреваешь компрометацию аккаунта</h3>
+        <ol><li>Используй заведомо безопасное устройство и смени пароль.</li><li>Заверши неизвестные активные сессии.</li><li>Включи MFA и проверь способы восстановления доступа.</li><li>Проверь связанные аккаунты, особенно если пароль повторялся.</li><li>Обратись в официальную поддержку сервиса, если доступ уже потерян.</li></ol>
+        <h3>Если запустил подозрительный файл</h3>
+        <ol><li>Отключи устройство от сети, если есть основания подозревать активную вредоносную деятельность.</li><li>Не вводи на этом устройстве новые пароли и платёжные данные.</li><li>С другого, доверенного устройства проверь важные аккаунты и заверши неизвестные сессии.</li><li>Используй актуальное защитное ПО или обратись к специалисту для проверки устройства.</li><li>При необходимости восстанови данные из проверенной резервной копии.</li></ol>
+        <p>Не удаляй наугад системные файлы и не запускай случайные «лечащие» скрипты из интернета: это может усугубить ситуацию.</p>
+      </section>
+
+      <section class="article-section" id="about">
+        <div class="eyebrow">08 / About AXIPRO</div>
+        <h2>Об AXIPRO Security</h2>
+        <p>AXIPRO Security — информационный проект о цифровой безопасности. Его задача — объяснять технические темы понятным языком, помогать распознавать распространённые угрозы и формировать более безопасные привычки при использовании программ, сервисов и плагинов.</p>
+        <p>Материалы сайта носят образовательный характер и не являются индивидуальной технической экспертизой. Информация не заменяет рекомендации специалистов по реагированию на инциденты и проверку конкретного устройства.</p>
+        <p>Новости и обновления проекта публикуются в Telegram: <a href="https://t.me/axipro_plugins" target="_blank" rel="noopener noreferrer">AXIPRO | Plugins</a>.</p>
+      </section>
+    </article>
+  </div>
+</main>
+<footer class="wrap footer"><span>© <span id="year"></span> AXIPRO SECURITY</span><span>KNOWLEDGE · AWARENESS · PROTECTION</span><a href="#top">НАВЕРХ ↑</a></footer>
+<button class="backtop" id="backTop" aria-label="Наверх">↑</button>
+<script>
+const menuButton=document.getElementById('menuButton');
+const nav=document.getElementById('mainNav');
+menuButton.addEventListener('click',()=>{const opened=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(opened));});
+nav.addEventListener('click',event=>{if(event.target.closest('a')){nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');}});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');}});
+document.getElementById('year').textContent=new Date().getFullYear();
+const backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>backTop.classList.toggle('show',window.scrollY>500),{passive:true});
+backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
